@@ -1,0 +1,77 @@
+---
+import '@fontsource/bellefair';
+import '@fontsource/barlow-condensed';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'bellefair', system-ui, sans-serif;
+    background: #13151a;
+  }
+
+  /* Font sizes */
+  .heading1 {
+    font-size: 150px;
+  }
+
+  .heading2 {
+    font-size: 100px;
+  }
+
+  .heading3 {
+    font-size: 56px;
+  }
+
+  .heading4 {
+    font-size: 32px;
+  }
+
+  .heading5 {
+    font-size: 28px;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    letter-spacing: 4.75px;
+  }
+
+  .sub-heading1 {
+    font-size: 28px;
+  }
+
+  .sub-heading2 {
+    font-size: 14px;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    letter-spacing: 2.35px;
+  }
+
+  .nav-text {
+    font-size: 16px;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    letter-spacing: 2.7px;
+  }
+
+  @media (width <= 375) {
+    .heading1 {
+      font-size: 80px;
+    }
+  }
+</style>

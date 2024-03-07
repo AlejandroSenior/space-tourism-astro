@@ -1,0 +1,38 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<DefaultLayout title={`${title}`}>
+  <main class="grid grid-cols-2 place-content-center">
+    <slot />
+  </main>
+</DefaultLayout>
+
+<style>
+  html {
+    background-size: cover;
+    background-image: url('/img/home-mobile-background.avif');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+  }
+
+  main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+  }
+
+  @media (width > 768px) {
+    html {
+      background-image: url('/img/home-desktop-background.avif');
+    }
+  }
+</style>

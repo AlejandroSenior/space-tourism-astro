@@ -10,8 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.4.13",
+    "@fontsource/barlow-condensed": "^5.0.12",
+    "@fontsource/bellefair": "^5.0.12",
+    "astro": "^4.4.13"
+  },
+  "devDependencies": {
     "@astrojs/check": "^0.5.6",
-    "typescript": "^5.3.3"
+    "@astrojs/tailwind": "^5.1.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
   }
 }
