@@ -1,6 +1,7 @@
 ---
 import '@fontsource/bellefair';
 import '@fontsource/barlow-condensed';
+import Nabvar from '@/sections/Navbar.astro';
 
 interface Props {
   title: string;
@@ -20,6 +21,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Nabvar />
     <slot />
   </body>
 </html>

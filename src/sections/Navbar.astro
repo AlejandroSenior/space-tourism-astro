@@ -1,0 +1,37 @@
+---
+import MainLogo from '@/icons/main-logo.astro';
+---
+
+<header>
+  <nav class="absolute mt-10 grid w-full grid-cols-12">
+    <div class="col-span-1 flex items-center justify-center">
+      <MainLogo />
+    </div>
+
+    <div class="col-span-5 flex items-center">
+      <div class="z-10 h-[1px] w-full ml-10 bg-[#979797]"></div>
+    </div>
+
+    <div class="col-span-6 -ml-10 flex items-center justify-around bg-white/10 px-24 backdrop-blur-lg">
+      <a class="nav-text nav-link highlight-link text-white"><span class="font-bold">00</span> HOME</a>
+      <a class="nav-text nav-link text-white"><span class="font-bold">01</span> DESTINATION</a>
+      <a class="nav-text nav-link text-white"><span class="font-bold">02</span> CREW</a>
+      <a class="nav-text nav-link text-white"><span class="font-bold">03</span> TECHNOLOGY</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .div-links {
+    background-color: rgb(255, 255, 255, 0.4);
+  }
+
+  .nav-link {
+    /* height: 100%; */
+    padding: 30px 0;
+  }
+
+  .highlight-link {
+    border-bottom: 3px solid white;
+  }
+</style>
