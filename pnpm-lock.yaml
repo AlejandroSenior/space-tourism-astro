@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource/barlow':
+    specifier: ^5.0.12
+    version: 5.0.12
   '@fontsource/barlow-condensed':
     specifier: ^5.0.12
     version: 5.0.12
@@ -572,6 +575,10 @@ packages:
 
   /@fontsource/barlow-condensed@5.0.12:
     resolution: {integrity: sha512-Nwsb6NOEx6BfY/eGUkfxoIzM6+WPMH4Gi/8gVei5ZB8Q72Tw+nYP94XSNjqbxBwT66SgKMlhuTZkmaearpn6oA==}
+    dev: false
+
+  /@fontsource/barlow@5.0.12:
+    resolution: {integrity: sha512-4SyFB9odKCWrHs+VXukOgzeGUWOCk2Wo173xH+NdqBalaXYZjP4jF0CdYzfYbHgX/Y+7CBDVrLcAklrgvnJc7w==}
     dev: false
 
   /@fontsource/bellefair@5.0.12:

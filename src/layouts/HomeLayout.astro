@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <DefaultLayout title={`${title}`}>
-  <main class="grid grid-cols-2 place-content-center">
+  <main class="grid grid-cols-1 place-content-end px-5 lg:grid-cols-2 lg:place-content-center">
     <slot />
   </main>
 </DefaultLayout>
@@ -18,20 +18,23 @@ const { title } = Astro.props;
   html {
     background-size: cover;
     background-image: url('/img/home-mobile-background.avif');
-    height: 100vh;
     background-position: center;
+    height: 100vh;
   }
 
   main {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
   }
 
-  @media (width > 768px) {
+  @media (width >= 768px) {
     html {
       background-image: url('/img/home-desktop-background.avif');
+    }
+
+    main {
+      height: 100vh;
     }
   }
 </style>

@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/barlow": "^5.0.12",
     "@fontsource/barlow-condensed": "^5.0.12",
     "@fontsource/bellefair": "^5.0.12",
     "astro": "^4.4.13"

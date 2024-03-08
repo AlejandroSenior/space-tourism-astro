@@ -1,5 +1,6 @@
 ---
 import '@fontsource/bellefair';
+import '@fontsource/barlow';
 import '@fontsource/barlow-condensed';
 import Nabvar from '@/sections/Navbar.astro';
 
@@ -28,35 +29,40 @@ const { title } = Astro.props;
 
 <style is:global>
   html {
-    font-family: 'bellefair', system-ui, sans-serif;
+    font-family: 'barlow', system-ui, sans-serif;
     background: #13151a;
   }
 
   /* Font sizes */
   .heading1 {
-    font-size: 150px;
+    font-size: 80px;
+    font-family: 'bellefair', system-ui, sans-serif;
   }
 
   .heading2 {
     font-size: 100px;
+    font-family: 'bellefair', system-ui, sans-serif;
   }
 
   .heading3 {
     font-size: 56px;
+    font-family: 'bellefair', system-ui, sans-serif;
   }
 
   .heading4 {
-    font-size: 32px;
+    font-size: 20px;
+    font-family: 'bellefair', system-ui, sans-serif;
   }
 
   .heading5 {
-    font-size: 28px;
+    font-size: 16px;
     font-family: 'Barlow Condensed', system-ui, sans-serif;
     letter-spacing: 4.75px;
   }
 
   .sub-heading1 {
     font-size: 28px;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
   }
 
   .sub-heading2 {
@@ -66,14 +72,32 @@ const { title } = Astro.props;
   }
 
   .nav-text {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Barlow Condensed', system-ui, sans-serif;
     letter-spacing: 2.7px;
   }
 
-  @media (width <= 375) {
+  @media (width >= 768px) {
     .heading1 {
-      font-size: 80px;
+      font-size: 150px;
+    }
+
+    .heading4 {
+      font-size: 32px;
+    }
+
+    .heading5 {
+      font-size: 20px;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .heading5 {
+      font-size: 28px;
+    }
+
+    .nav-text {
+      font-size: 16px;
     }
   }
 </style>
