@@ -16,15 +16,18 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
       sit back, and relax because we’ll give you a truly out of this world experience!
     </p>
   </div>
-  <button
+  <a
+    id="main-btn"
+    href="/destination"
+    transition:name="main-button"
     class="mt-16 flex h-[150px] w-[150px] items-center justify-center justify-self-center rounded-full bg-white max-md:mb-10 md:h-[242px] md:w-[242px] md:max-lg:mb-10 md:max-lg:mt-32 lg:mt-80 lg:h-[274px] lg:w-[274px] lg:justify-self-end"
   >
     <p class="heading4">EXPLORE</p>
-  </button>
+  </a>
 </DefaultLayout>
 
 <style>
-  button:hover {
+  #main-btn:hover {
     box-shadow: 0px 0px 0px 60px rgb(151, 151, 151, 0.6);
   }
 </style>

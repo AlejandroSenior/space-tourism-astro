@@ -9,7 +9,12 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
 >
   <div>
     <p class="heading5 text-white max-md:text-center">01 PICK YOUR DESTINATION</p>
-    <img src="/img/moon.avif" class="mt-10 aspect-square w-[170px] max-lg:mx-auto md:w-[300px] lg:w-[445px]" alt="Moon image" />
+    <img
+      transition:name="main-button"
+      src="/img/moon.avif"
+      class="mt-10 aspect-square w-[170px] max-lg:mx-auto md:w-[300px] lg:w-[445px]"
+      alt="Moon image"
+    />
   </div>
   <div class="self-center max-lg:mt-12">
     <p class="mx-auto max-w-[400px] text-primary max-lg:text-center">
@@ -18,3 +23,8 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
     </p>
   </div>
 </DefaultLayout>
+
+<style>
+  /* TODO: usar este css para rotar los planetas, pero hay que utilizar imágenes como las del ejemplo (ultra-wide) */
+  /* https://stackoverflow.com/questions/61689623/rotating-planets-with-css */
+</style>
