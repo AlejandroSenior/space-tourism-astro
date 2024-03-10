@@ -6,9 +6,14 @@ import Nabvar from '@/sections/Navbar.astro';
 
 interface Props {
   title: string;
+  layoutClass?: string;
+  backgroundImg: string;
+  backgroundImgMobile?: string;
 }
 
-const { title } = Astro.props;
+const { title, layoutClass, backgroundImg, backgroundImgMobile } = Astro.props;
+const varBackgroundImg = `url(${backgroundImg})`;
+const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
 ---
 
 <!doctype html>
@@ -23,14 +28,26 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nabvar />
-    <slot />
+    <main class={layoutClass}>
+      <slot />
+    </main>
   </body>
 </html>
 
-<style is:global>
+<style is:global define:vars={{ varBackgroundImg, varBackgroundImgMobile }}>
   html {
     font-family: 'barlow', system-ui, sans-serif;
     background: #13151a;
+    background-size: cover;
+    background-image: var(--varBackgroundImgMobile);
+    background-position: center;
+    height: 100vh;
+  }
+
+  main {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Font sizes */
@@ -57,7 +74,7 @@ const { title } = Astro.props;
   .heading5 {
     font-size: 16px;
     font-family: 'Barlow Condensed', system-ui, sans-serif;
-    letter-spacing: 4.75px;
+    letter-spacing: 2.7px;
   }
 
   .sub-heading1 {
@@ -78,6 +95,10 @@ const { title } = Astro.props;
   }
 
   @media (width >= 768px) {
+    main {
+      height: 100vh;
+    }
+
     .heading1 {
       font-size: 150px;
     }
@@ -88,10 +109,15 @@ const { title } = Astro.props;
 
     .heading5 {
       font-size: 20px;
+      letter-spacing: 4.75px;
     }
   }
 
   @media (width >= 1024px) {
+    html {
+      background-image: var(--varBackgroundImg);
+    }
+
     .heading5 {
       font-size: 28px;
     }

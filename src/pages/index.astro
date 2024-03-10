@@ -1,8 +1,13 @@
 ---
-import HomeLayout from '@/layouts/HomeLayout.astro';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
 ---
 
-<HomeLayout title="Space tourism">
+<DefaultLayout
+  title="Space tourism"
+  layoutClass="grid grid-cols-1 place-content-end px-10 lg:grid-cols-2 lg:place-content-center"
+  backgroundImg="/img/home-desktop-background.avif"
+  backgroundImgMobile="/img/home-mobile-background.avif"
+>
   <div class="max-lg:text-center max-md:mt-12">
     <p class="heading5 text-primary lg:mt-56">SO, YOU WANT TO TRAVEL TO</p>
     <p class="heading1 my-3 text-white md:max-lg:-my-5">SPACE</p>
@@ -11,9 +16,15 @@ import HomeLayout from '@/layouts/HomeLayout.astro';
       sit back, and relax because we’ll give you a truly out of this world experience!
     </p>
   </div>
-  <div
+  <button
     class="mt-16 flex h-[150px] w-[150px] items-center justify-center justify-self-center rounded-full bg-white max-md:mb-10 md:h-[242px] md:w-[242px] md:max-lg:mb-10 md:max-lg:mt-32 lg:mt-80 lg:h-[274px] lg:w-[274px] lg:justify-self-end"
   >
     <p class="heading4">EXPLORE</p>
-  </div>
-</HomeLayout>
+  </button>
+</DefaultLayout>
+
+<style>
+  button:hover {
+    box-shadow: 0px 0px 0px 60px rgb(151, 151, 151, 0.6);
+  }
+</style>

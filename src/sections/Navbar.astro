@@ -4,8 +4,8 @@ import MobileMenuLogo from '@/icons/mobile-menu.astro';
 ---
 
 <header>
-  <nav class="mt-5 grid w-full grid-cols-12 md:absolute md:mt-10 md:max-lg:mt-0">
-    <div class="col-span-6 flex items-center max-lg:ml-10 md:col-span-5 lg:col-span-1 lg:justify-center">
+  <nav class="mt-5 grid w-full grid-cols-12 lg:absolute md:mt-10 md:max-lg:mt-0">
+    <div class="col-span-6 flex items-center max-lg:ml-5 md:col-span-5 lg:col-span-1 lg:justify-center">
       <MainLogo />
     </div>
 
@@ -14,10 +14,10 @@ import MobileMenuLogo from '@/icons/mobile-menu.astro';
     </div>
 
     <div class="col-span-7 -ml-10 hidden items-center justify-around bg-white/10 px-8 backdrop-blur-lg md:flex lg:col-span-6 lg:px-24">
-      <a class="nav-text nav-link highlight-link text-white"><span class="font-bold max-lg:hidden">00</span> HOME</a>
-      <a class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">01</span> DESTINATION</a>
-      <a class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">02</span> CREW</a>
-      <a class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">03</span> TECHNOLOGY</a>
+      <a href="/" class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">00</span> HOME</a>
+      <a href="/destination" class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">01</span> DESTINATION</a>
+      <a href="/" class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">02</span> CREW</a>
+      <a href="/" class="nav-text nav-link text-white"><span class="font-bold max-lg:hidden">03</span> TECHNOLOGY</a>
     </div>
 
     <div class="col-span-6 mr-10 flex items-center justify-self-end md:hidden">
@@ -34,8 +34,11 @@ import MobileMenuLogo from '@/icons/mobile-menu.astro';
   }
 
   .nav-link {
-    /* height: 100%; */
     padding: 30px 0;
+  }
+
+  .nav-link:hover {
+    border-bottom: 3px solid rgb(151, 151, 151, 0.6);
   }
 
   .highlight-link {
