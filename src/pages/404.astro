@@ -1,0 +1,26 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout
+  title="Space tourism"
+  layoutClass="flex items-center max-lg:h-[85vh]"
+  backgroundImg="/img/home-desktop-background.avif"
+  backgroundImgMobile="/img/home-mobile-background.avif"
+>
+  <div class="mx-auto text-center">
+    <p class="heading2 text-white">SORRY</p>
+    <p class="heading3 text-white">We couldn`t find that page</p>
+  </div>
+</DefaultLayout>
+
+<style>
+  @media (width < 768px) {
+    .heading2 {
+      font-size: 40px;
+    }
+    .heading3 {
+      font-size: 25px !important;
+    }
+  }
+</style>
