@@ -1,28 +1,118 @@
 ---
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+interface HeavenlyBody {
+  id: string;
+  name: string;
+  description: string;
+  avg_distance: string;
+  est_travel_time: string;
+}
 ---
 
 <DefaultLayout
   title="Space tourism - destination"
-  layoutClass="lg:grid lg:grid-cols-2 lg:place-content-center lg:justify-items-center px-7 max-lg:my-12"
+  layoutClass="lg:grid lg:grid-cols-2 lg:place-content-center lg:justify-items-center px-7 max-lg:my-12 gap-44"
   backgroundImg="/img/destination-background.avif"
 >
   <div>
     <p class="heading5 text-white max-md:text-center">01 PICK YOUR DESTINATION</p>
     <img
+      id="heavenly-body-img"
       transition:name="main-button"
       src="/img/moon.avif"
       class="mt-10 aspect-square w-[170px] max-lg:mx-auto md:w-[300px] lg:w-[445px]"
       alt="Moon image"
     />
   </div>
-  <div class="self-center max-lg:mt-12">
-    <p class="mx-auto max-w-[400px] text-primary max-lg:text-center">
+  <div class="m-auto max-w-[550px] self-center max-lg:mt-12 max-lg:text-center">
+    <button id="moon" class="nav-text nav-link heavenly-body-link active mr-7 pb-2 text-white">MOON</button>
+    <button id="mars" class="nav-text nav-link heavenly-body-link mr-7 pb-2 text-white">MARS</button>
+    <button id="europe" class="nav-text nav-link heavenly-body-link mr-7 pb-2 text-white">EUROPE</button>
+    <button id="titan" class="nav-text nav-link heavenly-body-link pb-2 text-white">TITAN</button>
+
+    <p class="heading2 text-white" id="name">MOON</p>
+    <p class="mx-auto text-primary" id="description">
       See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While
       you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
     </p>
+    <div class="m-auto mb-5 mt-10 h-[1px] w-full bg-[#383B4B]"></div>
+    <div class="grod-cols-1 grid md:grid-cols-2">
+      <div>
+        <p class="sub-heading2 text-primary">AVG. DISTANCE</p>
+        <p class="sub-heading1 text-white" id="avg-distance">384,000 km</p>
+      </div>
+      <div class="max-md:mt-5">
+        <p class="sub-heading2 text-primary">EST. TRAVEL TIME</p>
+        <p class="sub-heading1 text-white" id="travel-time">3 DAYS</p>
+      </div>
+    </div>
   </div>
 </DefaultLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const heavenlyBodies = [
+      {
+        id: 'moon',
+        name: 'MOON',
+        description:
+          'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
+        avg_distance: '384,000 km',
+        est_travel_time: '3 DAYS'
+      },
+      {
+        id: 'mars',
+        name: 'MARS',
+        description:
+          'Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!',
+        avg_distance: '225 MIL. km',
+        est_travel_time: '9 months'
+      },
+      {
+        id: 'europe',
+        name: 'EUROPA',
+        description:
+          'The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.',
+        avg_distance: '628 MIL. km',
+        est_travel_time: '3 YEARS'
+      },
+      {
+        id: 'titan',
+        name: 'TITAN',
+        description:
+          'The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.',
+        avg_distance: '1.6 BIL. km',
+        est_travel_time: '7 YEARS'
+      }
+    ];
+
+    const heavenlyBodiesLinks = document.querySelectorAll('.heavenly-body-link');
+    const heavenlyBodyImage = document.getElementById('heavenly-body-img');
+    const name = document.getElementById('name');
+    const description = document.getElementById('description');
+    const avgDistance = document.getElementById('avg-distance');
+    const travelTime = document.getElementById('travel-time');
+
+    heavenlyBodiesLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const selectedId = (event.currentTarget as HTMLElement).id;
+
+        heavenlyBodiesLinks.forEach((link) => {
+          link.classList.remove('active');
+        });
+
+        if (link.id === selectedId) link.classList.add('active');
+
+        heavenlyBodyImage?.setAttribute('src', `/img/${selectedId}.avif`);
+        name!.textContent = heavenlyBodies.find((e) => e.id === selectedId)!.name;
+        description!.textContent = heavenlyBodies.find((e) => e.id === selectedId)!.description;
+        avgDistance!.textContent = heavenlyBodies.find((e) => e.id === selectedId)!.avg_distance;
+        travelTime!.textContent = heavenlyBodies.find((e) => e.id === selectedId)!.est_travel_time;
+      });
+    });
+  });
+</script>
 
 <style>
   /* TODO: usar este css para rotar los planetas, pero hay que utilizar imágenes como las del ejemplo (ultra-wide) */
