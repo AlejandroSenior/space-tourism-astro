@@ -31,7 +31,7 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
   </head>
   <body>
     <Nabvar />
-    <main class={layoutClass}>
+    <main class={`${layoutClass} max-w-[1100px] 2xl:max-w-[1300px]`}>
       <slot />
     </main>
     <style is:global define:vars={{ varBackgroundImg, varBackgroundImgMobile }}>
@@ -46,7 +46,6 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
       }
 
       main {
-        max-width: 1100px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -137,6 +136,7 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
 
         .heading3 {
           font-size: 56px;
+          line-height: 60px;
         }
 
         .heading4 {
