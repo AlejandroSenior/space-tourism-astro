@@ -41,7 +41,6 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
         background-size: cover;
         background-image: var(--varBackgroundImgMobile);
         background-position: center;
-        height: 100vh;
       }
 
       main {
@@ -62,12 +61,12 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
       }
 
       .heading3 {
-        font-size: 56px;
+        font-size: 24px;
         font-family: 'bellefair', system-ui, sans-serif;
       }
 
       .heading4 {
-        font-size: 20px;
+        font-size: 16px;
         font-family: 'bellefair', system-ui, sans-serif;
       }
 
@@ -95,8 +94,8 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
       }
 
       @media (width >= 768px) {
-        main {
-          height: 100vh;
+        html {
+          font-size: 18px;
         }
 
         .heading1 {
@@ -107,8 +106,12 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
           font-size: 80px;
         }
 
+        .heading3 {
+          font-size: 40px;
+        }
+
         .heading4 {
-          font-size: 32px;
+          font-size: 24px;
         }
 
         .heading5 {
@@ -122,8 +125,20 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
           background-image: var(--varBackgroundImg);
         }
 
+        main {
+          height: 100vh;
+        }
+
         .heading2 {
           font-size: 100px;
+        }
+
+        .heading3 {
+          font-size: 56px;
+        }
+
+        .heading4 {
+          font-size: 32px;
         }
 
         .heading5 {
