@@ -2,28 +2,32 @@
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 ---
 
-<DefaultLayout title="Space tourism - destination" layoutClass="grid grid-cols-1 lg:grid-cols-2" backgroundImg="/img/crew-background.avif">
-  <div class="center self-center lg:self-center">
+<DefaultLayout
+  title="Space tourism - destination"
+  layoutClass="grid grid-cols-1 lg:grid-cols-2 max-md:px-10"
+  backgroundImg="/img/crew-background.avif"
+>
+  <div class="self-center lg:self-end">
     <p class="heading5 text-white max-md:hidden md:max-lg:ml-10 md:max-lg:mt-10"><span class="text-white/30">02</span> MEET YOUR CREW</p>
 
-    <div class="mx-auto max-w-[550px] max-lg:text-center">
-      <div class="my-5 md:hidden">
-        <button id="moon" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
-        <button id="mars" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
-        <button id="europe" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
-        <button id="titan" class="h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
-      </div>
+    <div class="my-5 text-center md:hidden">
+      <button id="moon" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
+      <button id="mars" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
+      <button id="europe" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
+      <button id="titan" class="h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
+    </div>
 
-      <div class="md:mt-12 lg:my-24">
+    <div class="mx-auto max-w-[550px] max-lg:text-center lg:mt-32">
+      <div class="md:max-lg:mt-12">
         <p class="heading4 text-white/30" id="position">COMMANDER</p>
         <p class="heading3 text-white" id="name">DOUGLAS HURLEY</p>
-        <p class="text-primary max-lg:mx-auto lg:max-w-[450px]" id="description">
+        <p class="text-primary max-lg:mx-auto lg:mb-28 lg:max-w-[450px]" id="description">
           Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the
           third time as commander of Crew Dragon Demo-2.
         </p>
       </div>
 
-      <div class="my-5 max-md:hidden">
+      <div class="my-5 max-md:hidden lg:mb-24">
         <button id="moon" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
         <button id="mars" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
         <button id="europe" class="mr-3 h-[10px] w-[10px] rounded-full bg-white/30 lg:h-[15px] lg:w-[15px]"></button>
@@ -32,7 +36,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
     </div>
   </div>
   <div class="self-end max-md:order-first">
-    <p class="heading5 my-5 text-white max-md:text-center md:hidden">02 MEET YOUR CREW</p>
+    <p class="heading5 my-5 text-white max-md:text-center md:hidden"><span class="text-white/30">02</span> MEET YOUR CREW</p>
     <div class="w-[177px] max-lg:mx-auto md:w-[456px] lg:w-[568px]">
       <img id="heavenly-body-img" src="/img/douglas-hurley.avif" alt="Crew image" />
     </div>

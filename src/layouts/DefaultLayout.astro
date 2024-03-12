@@ -37,10 +37,12 @@ const varBackgroundImgMobile = `url(${backgroundImgMobile ?? backgroundImg})`;
     <style is:global define:vars={{ varBackgroundImg, varBackgroundImgMobile }}>
       html {
         font-family: 'barlow', system-ui, sans-serif;
-        background: #13151a;
+        background: var(--varBackgroundImgMobile) no-repeat center center fixed;
+        background-color: #0b0d17;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
-        background-image: var(--varBackgroundImgMobile);
-        background-position: center;
       }
 
       main {
