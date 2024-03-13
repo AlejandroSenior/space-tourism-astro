@@ -10,105 +10,112 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
   <div class="lg:ml-36 lg:self-center 2xl:ml-44">
     <p class="heading5 text-white max-lg:hidden md:max-lg:ml-10 md:max-lg:mt-10"><span class="text-white/30">03</span> SPACE LAUCH 101</p>
 
-    <div class="max-lg:mx-auto max-lg:text-center lg:mt-32">
-      <p class="heading5 text-primary" id="position">THE TERMINOLOGY…</p>
-      <p class="heading3 mb-5 mt-3 text-white" id="name">LAUNCH VEHICLE</p>
-      <p class="max-w-[550px] text-primary max-lg:mx-auto max-md:px-10 lg:mb-28 lg:max-w-[450px]" id="description">
-        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to
-        Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an
-        awe-inspiring sight on the launch pad!
-      </p>
+    <div class="max-lg:mx-auto max-lg:text-center lg:mt-32 lg:grid lg:grid-cols-4">
+      <div class="col-span-1 items-center justify-center max-lg:my-10 max-md:my-5 lg:grid lg:grid-rows-3 lg:justify-start">
+        <button
+          id="rocket1"
+          class="link-btn heading4 h-[50px] w-[50px] rounded-full border-2 bg-white p-3 max-lg:mr-4 md:h-[60px] md:w-[60px] lg:h-[80px] lg:w-[80px]"
+        >
+          1
+        </button>
+        <button
+          id="rocket2"
+          class="link-btn heading4 h-[50px] w-[50px] rounded-full border-2 border-white/30 p-3 text-white max-lg:mr-4 md:h-[60px] md:w-[60px] lg:h-[80px] lg:w-[80px]"
+        >
+          2
+        </button>
+        <button
+          id="rocket3"
+          class="link-btn heading4 h-[50px] w-[50px] rounded-full border-2 border-white/30 p-3 text-white md:h-[60px] md:w-[60px] lg:h-[80px] lg:w-[80px]"
+        >
+          3
+        </button>
+      </div>
+
+      <div class="col-span-3">
+        <p class="heading5 text-primary" id="position">THE TERMINOLOGY…</p>
+        <p class="heading3 mb-5 mt-3 text-white" id="name">LAUNCH VEHICLE</p>
+        <p class="max-w-[550px] text-primary max-lg:mx-auto max-md:px-10 lg:max-w-[450px]" id="description">
+          A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to
+          Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an
+          awe-inspiring sight on the launch pad!
+        </p>
+      </div>
     </div>
   </div>
   <div class="max-lg:order-first max-lg:w-full lg:self-center lg:justify-self-end">
     <p class="heading5 my-5 text-white max-md:text-center md:mb-12 md:ml-10 md:mt-10 lg:hidden">
       <span class="text-white/30">03</span> SPACE LAUCH 101
     </p>
-    <div id="div-img" class="max-md:h-[170px] md:max-lg:h-[310px] lg:w-full">
-      <img id="member-img" src="/img/launch-vehicle.avif" alt="Space Vehicle" class="max-lg:hidden" />
-    </div>
+    <img id="rocket-img-desktop" src="/img/rocket1.avif" alt="Space Vehicle" class="max-lg:hidden" />
+    <img
+      id="rocket-img-mobile"
+      src="/img/rocket1.avif"
+      alt="Space Vehicle"
+      class="w-[100vw] max-md:h-[170px] md:max-lg:h-[310px] lg:hidden"
+    />
     <div class="mx-auto h-[1px] w-[80%] bg-[#383B4B] md:hidden"></div>
   </div>
 </DefaultLayout>
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const members = [
+    const rockets = [
       {
-        id: 'douglas-hurley',
-        position: 'COMMANDER',
-        name: 'DOUGLAS HURLEY',
+        id: 'rocket1',
+        name: 'LAUNCH VEHICLE',
         description:
-          'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.'
+          "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
       },
       {
-        id: 'mark-shuttleworth',
-        position: 'MISSION SPECIALIST',
-        name: 'MARK SHUTTLEWORTH',
+        id: 'rocket2',
+        name: 'SPACEPORT',
         description:
-          'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.'
+          'A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.'
       },
       {
-        id: 'victor-glover',
-        position: 'PILOT',
-        name: 'VICTOR GLOVER',
+        id: 'rocket3',
+        name: 'SPACE CAPSULE',
         description:
-          'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.'
-      },
-      {
-        id: 'anousheh-ansari',
-        position: 'FLIGHT ENGINEER',
-        name: 'ANOUSHEH ANSARI',
-        description:
-          'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.'
+          "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained."
       }
     ];
 
-    const membersLinks = document.querySelectorAll('.member-link');
-    const memberImage = document.getElementById('member-img');
-    const position = document.getElementById('position');
+    const rocketsLinks = document.querySelectorAll('.link-btn');
+    const rocketImageMobile = document.getElementById('rocket-img-mobile');
+    const rocketImageDesktop = document.getElementById('rocket-img-desktop');
     const name = document.getElementById('name');
     const description = document.getElementById('description');
 
-    membersLinks.forEach((link) => {
+    rocketsLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         const selectedId = (event.currentTarget as HTMLElement).id;
 
-        membersLinks.forEach((link) => {
-          link.classList.remove('bg-white');
-          link.classList.add('bg-white/20');
+        rocketsLinks.forEach((link) => {
+          link.classList.remove('bg-white', 'border-white/30', 'text-white', 'text-secondary');
+
+          if (link.id === selectedId) link.classList.add('bg-white', 'text-secondary');
+          else link.classList.add('border-white/30', 'text-white');
         });
 
-        if (link.id === selectedId) {
-          link.classList.remove('bg-white/20');
-          link.classList.add('bg-white');
-        }
-
-        memberImage?.setAttribute('src', `/img/${selectedId}.avif`);
-        position!.textContent = members.find((e) => e.id === selectedId)!.position;
-        name!.textContent = members.find((e) => e.id === selectedId)!.name;
-        description!.textContent = members.find((e) => e.id === selectedId)!.description;
+        rocketImageMobile?.setAttribute('src', `/img/${selectedId}.avif`);
+        rocketImageDesktop?.setAttribute('src', `/img/${selectedId}.avif`);
+        name!.textContent = rockets.find((e) => e.id === selectedId)!.name;
+        description!.textContent = rockets.find((e) => e.id === selectedId)!.description;
       });
     });
   });
 </script>
 
 <style>
-  /* TODO: usar este css para rotar los planetas, pero hay que utilizar imágenes como las del ejemplo (ultra-wide) */
-  /* https://stackoverflow.com/questions/61689623/rotating-planets-with-css */
-
-  .member-link:hover {
-    background-color: rgb(255, 255, 255, 0.5);
+  .link-btn:hover {
+    background-color: white;
+    color: #0b0d17;
   }
 
   @media (width < 1024px) {
-    #div-img {
-      background: url('/img/launch-vehicle.avif') center center;
-      background-color: #0b0d17;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+    #rocket-img-mobile {
+      object-fit: cover;
     }
   }
 </style>
