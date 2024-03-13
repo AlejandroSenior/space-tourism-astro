@@ -4,41 +4,28 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
 <DefaultLayout
   title="Space tourism - destination"
-  layoutClass="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-md:px-10 max-w-[1100px] 2xl:max-w-[1300px]"
-  backgroundImg="/img/crew-background.avif"
+  layoutClass="grid grid-cols-1 lg:grid-cols-2"
+  backgroundImg="/img/technology-background.avif"
 >
-  <div class="self-center lg:self-end 2xl:col-span-2">
-    <p class="heading5 text-white max-md:hidden md:max-lg:ml-10 md:max-lg:mt-10"><span class="text-white/30">02</span> MEET YOUR CREW</p>
-
-    <div class="my-5 text-center md:hidden">
-      <button id="douglas-hurley" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white lg:h-[15px] lg:w-[15px]"></button>
-      <button id="mark-shuttleworth" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-      <button id="victor-glover" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-      <button id="anousheh-ansari" class="member-link h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-    </div>
+  <div class="lg:ml-36 lg:self-center 2xl:ml-44">
+    <p class="heading5 text-white max-lg:hidden md:max-lg:ml-10 md:max-lg:mt-10"><span class="text-white/30">03</span> SPACE LAUCH 101</p>
 
     <div class="max-lg:mx-auto max-lg:text-center lg:mt-32">
-      <div class="md:max-lg:mt-12">
-        <p class="heading4 text-white/30" id="position">COMMANDER</p>
-        <p class="heading3 mb-5 mt-3 text-white" id="name">DOUGLAS HURLEY</p>
-        <p class="max-w-[550px] text-primary max-lg:mx-auto lg:mb-28 lg:max-w-[450px]" id="description">
-          Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the
-          third time as commander of Crew Dragon Demo-2.
-        </p>
-      </div>
-
-      <div class="my-5 max-md:hidden lg:mb-24">
-        <button id="douglas-hurley" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white lg:h-[15px] lg:w-[15px]"></button>
-        <button id="mark-shuttleworth" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-        <button id="victor-glover" class="member-link mr-3 h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-        <button id="anousheh-ansari" class="member-link h-[10px] w-[10px] rounded-full bg-white/20 lg:h-[15px] lg:w-[15px]"></button>
-      </div>
+      <p class="heading5 text-primary" id="position">THE TERMINOLOGY…</p>
+      <p class="heading3 mb-5 mt-3 text-white" id="name">LAUNCH VEHICLE</p>
+      <p class="max-w-[550px] text-primary max-lg:mx-auto max-md:px-10 lg:mb-28 lg:max-w-[450px]" id="description">
+        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to
+        Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an
+        awe-inspiring sight on the launch pad!
+      </p>
     </div>
   </div>
-  <div class="self-end max-md:order-first">
-    <p class="heading5 my-5 text-white max-md:text-center md:hidden"><span class="text-white/30">02</span> MEET YOUR CREW</p>
-    <div class="w-[177px] max-lg:mx-auto md:w-[456px] lg:w-[568px]">
-      <img id="member-img" src="/img/douglas-hurley.avif" alt="Crew image" />
+  <div class="max-lg:order-first max-lg:w-full lg:self-center lg:justify-self-end">
+    <p class="heading5 my-5 text-white max-md:text-center md:mb-12 md:ml-10 md:mt-10 lg:hidden">
+      <span class="text-white/30">03</span> SPACE LAUCH 101
+    </p>
+    <div id="div-img" class="max-md:h-[170px] md:max-lg:h-[310px] lg:w-full">
+      <img id="member-img" src="/img/launch-vehicle.avif" alt="Space Vehicle" class="max-lg:hidden" />
     </div>
     <div class="mx-auto h-[1px] w-[80%] bg-[#383B4B] md:hidden"></div>
   </div>
@@ -112,5 +99,16 @@ import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
   .member-link:hover {
     background-color: rgb(255, 255, 255, 0.5);
+  }
+
+  @media (width < 1024px) {
+    #div-img {
+      background: url('/img/launch-vehicle.avif') center center;
+      background-color: #0b0d17;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
   }
 </style>

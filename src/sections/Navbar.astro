@@ -7,9 +7,9 @@ const currentPath = new URL(Astro.request.url).pathname;
 
 <header>
   <nav class="mt-5 grid w-full grid-cols-12 md:max-lg:mt-0 lg:absolute lg:mt-10">
-    <div class="col-span-6 flex items-center max-lg:ml-10 max-md:ml-5 md:col-span-5 lg:col-span-1 lg:justify-center">
+    <a href="/" class="col-span-6 flex items-center max-lg:ml-10 max-md:ml-5 md:col-span-5 lg:col-span-1 lg:justify-center">
       <MainLogo />
-    </div>
+    </a>
 
     <div class="hidden items-center lg:col-span-5 lg:flex">
       <div class="z-10 ml-10 h-[1px] w-full bg-[#979797]"></div>
@@ -22,8 +22,12 @@ const currentPath = new URL(Astro.request.url).pathname;
       <a href="/destination" class={`${currentPath === '/destination' ? 'active' : ''} nav-text nav-link py-7 text-white`}>
         <span class="font-bold max-lg:hidden">01</span> DESTINATION
       </a>
-      <a href="/crew" class="nav-text nav-link py-7 text-white"><span class="font-bold max-lg:hidden">02</span> CREW</a>
-      <a href="/" class="nav-text nav-link py-7 text-white"><span class="font-bold max-lg:hidden">03</span> TECHNOLOGY</a>
+      <a href="/crew" class={`${currentPath === '/crew' ? 'active' : ''} nav-text nav-link py-7 text-white`}>
+        <span class="font-bold max-lg:hidden">02</span> CREW
+      </a>
+      <a href="/technology" class={`${currentPath === '/technology' ? 'active' : ''} nav-text nav-link py-7 text-white`}>
+        <span class="font-bold max-lg:hidden">03</span> TECHNOLOGY
+      </a>
     </div>
 
     <div class="col-span-6 mr-10 flex items-center justify-self-end md:hidden">
