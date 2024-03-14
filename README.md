@@ -25,9 +25,7 @@ Website of a landing page that shows information about space tourism.
 [typescript-badge]: https://img.shields.io/badge/Typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&color=blue
 [tailwind-badge]: https://img.shields.io/badge/Tailwind-ffffff?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8
 
-## Para empezar
-
-### Prerequisitos
+### Prerequisites
 
 - PNPM (is recommended for its efficiency and speed)
 
@@ -41,7 +39,7 @@ Website of a landing page that shows information about space tourism.
   npm install npm@latest -g
   ```
 
-### Instalación
+### Install
 
 1. Clone repository
 
